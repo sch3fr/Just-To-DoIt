@@ -1,0 +1,29 @@
+﻿<Window x:Class="JustToDoIt.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:JustToDoIt"
+        mc:Ignorable="d"
+        Title="Just (To) Do It!" Height="200" Width="300">
+    <Grid>
+
+        <TabControl>
+            <TabItem Header="New Task">
+                <Grid Background="#FFE5E5E5">
+                    <Label Content="Task:" HorizontalAlignment="Left" Margin="20,44,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="novyUkol" HorizontalAlignment="Center" Margin="0,48,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="171"/>
+                    <Button x:Name="buttonPridat" Content="Add" HorizontalAlignment="Left" Margin="238,48,0,0" VerticalAlignment="Top" Width="36" Click="buttonPridat_Click"/>
+                </Grid>
+
+            </TabItem>
+            <TabItem Header="Task List">
+                <Grid Background="#FFE5E5E5">
+                    <ListBox x:Name="taskList" Height="150" Width="150" DisplayMemberPath="Source" SelectionChanged="taskList_SelectionChanged">
+                        <TextBlock Text="Testing" FontFamily="Arial"/>
+                    </ListBox>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
