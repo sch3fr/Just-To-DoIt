@@ -11,17 +11,19 @@
         <TabControl>
             <TabItem Header="New Task">
                 <Grid Background="#FFE5E5E5">
-                    <Label Content="Task:" HorizontalAlignment="Left" Margin="20,44,0,0" VerticalAlignment="Top"/>
-                    <TextBox x:Name="novyUkol" HorizontalAlignment="Center" Margin="0,48,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="171"/>
-                    <Button x:Name="buttonPridat" Content="Add" HorizontalAlignment="Left" Margin="238,48,0,0" VerticalAlignment="Top" Width="36" Click="buttonPridat_Click"/>
+                    <Label Content="Task:" Margin="20,44,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="35"/>
+                    <TextBox x:Name="novyUkol" Margin="62,48,0,0" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left" Width="170"/>
+                    <Button x:Name="buttonPridat" Content="Add" Margin="0,48,20,0" VerticalAlignment="Top" Click="buttonPridat_Click" HorizontalAlignment="Right" Width="36"/>
                 </Grid>
 
             </TabItem>
             <TabItem Header="Task List">
                 <Grid Background="#FFE5E5E5">
-                    <ListBox x:Name="taskList" Height="150" Width="150" DisplayMemberPath="Source" SelectionChanged="taskList_SelectionChanged">
+                    <ListBox x:Name="taskList" Height="150" Width="150" DisplayMemberPath="Source" Margin="16,3,128,3">
                         <TextBlock Text="Testing" FontFamily="Arial"/>
                     </ListBox>
+                    <Button x:Name="buttonDelSingle" Content="Delete single task" HorizontalAlignment="Left" Margin="177,23,0,0" VerticalAlignment="Top" Click="buttonDelSingle_Click" Width="108"/>
+                    <Button x:Name="buttonDelAll" Content="Delete all tasks" HorizontalAlignment="Left" Margin="177,54,0,0" VerticalAlignment="Top" Width="108" Click="buttonDelAll_Click"/>
                 </Grid>
             </TabItem>
         </TabControl>

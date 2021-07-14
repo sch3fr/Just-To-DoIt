@@ -29,5 +29,13 @@ namespace JustToDoIt
         {
 
         }
+        private void buttonDelAll_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+        private void buttonDelSingle_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
