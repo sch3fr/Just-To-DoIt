@@ -19,11 +19,12 @@
             </TabItem>
             <TabItem Header="Task List">
                 <Grid Background="#FFE5E5E5">
-                    <ListBox x:Name="taskList" Height="150" Width="150" DisplayMemberPath="Source" Margin="16,3,128,3">
-                        <TextBlock Text="Testing" FontFamily="Arial"/>
+                    <ListBox x:Name="taskList" Width="150" DisplayMemberPath="Source" Margin="16,18,128,3" SelectionChanged="taskList_SelectionChanged">
+
                     </ListBox>
                     <Button x:Name="buttonDelSingle" Content="Delete single task" HorizontalAlignment="Left" Margin="177,23,0,0" VerticalAlignment="Top" Click="buttonDelSingle_Click" Width="108"/>
                     <Button x:Name="buttonDelAll" Content="Delete all tasks" HorizontalAlignment="Left" Margin="177,54,0,0" VerticalAlignment="Top" Width="108" Click="buttonDelAll_Click"/>
+                    <Label Content="Tasks" HorizontalAlignment="Left" Margin="16,-5,0,0" VerticalAlignment="Top" Height="33"/>
                 </Grid>
             </TabItem>
         </TabControl>

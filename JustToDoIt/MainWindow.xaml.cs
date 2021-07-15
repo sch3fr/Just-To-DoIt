@@ -37,5 +37,10 @@ namespace JustToDoIt
         {
 
         }
+
+        private void taskList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }
