@@ -25,22 +25,5 @@ namespace JustToDoIt
             InitializeComponent();
         }
 
-        private void buttonPridat_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-        private void buttonDelAll_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-        private void buttonDelSingle_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void taskList_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
     }
 }

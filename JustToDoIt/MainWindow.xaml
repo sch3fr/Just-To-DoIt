@@ -7,24 +7,37 @@
         mc:Ignorable="d"
         Title="Just (To) Do It!" Height="200" Width="300">
     <Grid>
-
         <TabControl>
             <TabItem Header="New Task">
-                <Grid Background="#FFE5E5E5">
-                    <Label Content="Task:" Margin="20,44,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="35"/>
-                    <TextBox x:Name="novyUkol" Margin="62,48,0,0" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left" Width="170"/>
-                    <Button x:Name="buttonPridat" Content="Add" Margin="0,48,20,0" VerticalAlignment="Top" Click="buttonPridat_Click" HorizontalAlignment="Right" Width="36"/>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Margin="10" HorizontalAlignment="Right" VerticalAlignment="Center">Task:</Label>
+                    <TextBox VerticalAlignment="Center" Grid.Column="1"></TextBox>
+                    <Button Margin="10" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="2">Add Task</Button>
                 </Grid>
-
+                    
             </TabItem>
             <TabItem Header="Task List">
                 <Grid Background="#FFE5E5E5">
-                    <ListBox x:Name="taskList" Width="150" DisplayMemberPath="Source" Margin="16,18,128,3" SelectionChanged="taskList_SelectionChanged">
-
-                    </ListBox>
-                    <Button x:Name="buttonDelSingle" Content="Delete single task" HorizontalAlignment="Left" Margin="177,23,0,0" VerticalAlignment="Top" Click="buttonDelSingle_Click" Width="108"/>
-                    <Button x:Name="buttonDelAll" Content="Delete all tasks" HorizontalAlignment="Left" Margin="177,54,0,0" VerticalAlignment="Top" Width="108" Click="buttonDelAll_Click"/>
-                    <Label Content="Tasks" HorizontalAlignment="Left" Margin="16,-5,0,0" VerticalAlignment="Top" Height="33"/>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="3*"/>
+                        <ColumnDefinition Width="2*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="2*"/>
+                        <RowDefinition Height="3*"/>
+                        <RowDefinition Height="3*"/>
+                        <RowDefinition Height="3*"/>
+                    </Grid.RowDefinitions>
+                    <Label VerticalAlignment="Center" Grid.Row="0" Grid.Column="0">Task List:</Label>
+                    <ListBox Grid.Row="1" Grid.Column="0" Grid.RowSpan="3"></ListBox>
+                    <Button Height="20" Width="105" Grid.Row="1" Grid.Column="1" >Mark as done</Button>
+                    <Button Height="20" Width="105" Grid.Row="2" Grid.Column="1">Delete single task</Button>
+                    <Button Height="20" Width="105" Grid.Row="3" Grid.Column="1">Delete all tasks</Button>
                 </Grid>
             </TabItem>
         </TabControl>
