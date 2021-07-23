@@ -20,26 +20,32 @@ namespace JustToDoIt
     /// </summary>
     public partial class MainWindow : Window
     {
+        List<TodoItem> items = new List<TodoItem>();
+
 
         public MainWindow()
         {
             InitializeComponent();
-            List<TodoItem> items = new List<TodoItem>();
-
-            items.Add(new TodoItem() { Title = "First task", Completion = false });
-
+            //items.Add(new TodoItem() { Title = "First task", Completion = false });
             list.ItemsSource = items;
+
         }
 
         public class TodoItem
         {
             public string Title { get; set; }
             public bool Completion { get; set; }
+            //public int IdNum { get; set; }
         }
 
         private void buttonAddTask_Click(object sender, RoutedEventArgs e)
         {
+            //int ID = 1;
+
+            items.Add(new TodoItem() { Title = textBox.Text, Completion = false });// , IdNum = ID });
+            MessageBox.Show("Task " + textBox.Text + " has been added to the list");
             
+            //ID++;
         }
     }
 }

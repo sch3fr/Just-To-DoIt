@@ -34,12 +34,12 @@
                         <RowDefinition Height="3*"/>
                     </Grid.RowDefinitions>
                     <Label VerticalAlignment="Center" Grid.Row="0" Grid.Column="0">Task List:</Label>
-                    <ListBox x:Name="list" Grid.Row="1" Grid.Column="0" Grid.RowSpan="3">
+                    <ListBox x:Name="list" Grid.Row="1" Grid.Column="0" Grid.RowSpan="3" >
                         <ListBox.ItemTemplate>
                             <DataTemplate>
-                                <StackPanel Orientation="Horizontal">
+                                <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
                                     <TextBlock Text="{Binding Title}"/>
-                                    <CheckBox></CheckBox>
+                                    <CheckBox VerticalAlignment="Center" Margin="5,0,0,0"></CheckBox>
                                 </StackPanel>
                             </DataTemplate>
                         </ListBox.ItemTemplate>
