@@ -20,14 +20,14 @@ namespace JustToDoIt
     /// </summary>
     public partial class MainWindow : Window
     {
-        List<TodoItem> items = new List<TodoItem>();
+        List<TodoItem> taskList = new List<TodoItem>();
 
 
         public MainWindow()
         {
             InitializeComponent();
             //items.Add(new TodoItem() { Title = "First task", Completion = false });
-            list.ItemsSource = items;
+            list.ItemsSource = taskList;
 
         }
 
@@ -35,17 +35,28 @@ namespace JustToDoIt
         {
             public string Title { get; set; }
             public bool Completion { get; set; }
-            //public int IdNum { get; set; }
         }
 
         private void buttonAddTask_Click(object sender, RoutedEventArgs e)
         {
-            //int ID = 1;
-
-            items.Add(new TodoItem() { Title = textBox.Text, Completion = false });// , IdNum = ID });
+            taskList.Add(new TodoItem() { Title = textBox.Text, Completion = false });
             MessageBox.Show("Task " + textBox.Text + " has been added to the list");
+        }
+
+        private void buttonDelAll_Click(object sender, RoutedEventArgs e)
+        {
             
-            //ID++;
+            
+        }
+
+        private void buttonDelOne_Click(object sender, RoutedEventArgs e)
+        {
+            list.Items.Remove(taskList);
+        }
+
+        private void CheckBox_Checked(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

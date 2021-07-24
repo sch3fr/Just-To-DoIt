@@ -15,9 +15,23 @@
                         <ColumnDefinition Width="2*"/>
                         <ColumnDefinition Width="1*"/>
                     </Grid.ColumnDefinitions>
-                    <Label Margin="10" HorizontalAlignment="Right" VerticalAlignment="Center">Task:</Label>
-                    <TextBox x:Name="textBox" VerticalAlignment="Center" Grid.Column="1"></TextBox>
-                    <Button x:Name="buttonAddTask" Margin="10" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="2" Click="buttonAddTask_Click">Add Task</Button>
+                    <Label Margin="10" 
+                           HorizontalAlignment="Right" 
+                           VerticalAlignment="Center">
+                        Task:
+                    </Label>
+                    <TextBox x:Name="textBox"
+                             VerticalAlignment="Center"
+                             Grid.Column="1">
+                    </TextBox>
+                    <Button x:Name="buttonAddTask" 
+                            Margin="10" 
+                            HorizontalAlignment="Left" 
+                            VerticalAlignment="Center" 
+                            Grid.Column="2" 
+                            Click="buttonAddTask_Click">
+                        Add Task
+                    </Button>
                 </Grid>
                     
             </TabItem>
@@ -33,20 +47,45 @@
                         <RowDefinition Height="3*"/>
                         <RowDefinition Height="3*"/>
                     </Grid.RowDefinitions>
-                    <Label VerticalAlignment="Center" Grid.Row="0" Grid.Column="0">Task List:</Label>
-                    <ListBox x:Name="list" Grid.Row="1" Grid.Column="0" Grid.RowSpan="3" >
+                    <Label VerticalAlignment="Center" 
+                           Grid.Row="0" 
+                           Grid.Column="0">
+                        Task List:
+                    </Label>
+                    <ListBox x:Name="list" 
+                             Grid.Row="1" 
+                             Grid.Column="0" 
+                             Grid.RowSpan="3">
                         <ListBox.ItemTemplate>
                             <DataTemplate>
-                                <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                                <StackPanel Orientation="Horizontal" 
+                                            VerticalAlignment="Center">
+                                    <CheckBox VerticalAlignment="Center"
+                                              Margin="5,0,5,0"
+                                              Checked="CheckBox_Checked">
+                                    </CheckBox>
                                     <TextBlock Text="{Binding Title}"/>
-                                    <CheckBox VerticalAlignment="Center" Margin="5,0,0,0"></CheckBox>
+                                    
                                 </StackPanel>
                             </DataTemplate>
                         </ListBox.ItemTemplate>
                     </ListBox>
-                    <Button x:Name="buttonDone" Height="20" Width="105" Grid.Row="1" Grid.Column="1" >Mark as done</Button>
-                    <Button x:Name="buttonDelOne" Height="20" Width="105" Grid.Row="2" Grid.Column="1">Delete single task</Button>
-                    <Button x:Name="buttonDelAll" Height="20" Width="105" Grid.Row="3" Grid.Column="1">Delete all tasks</Button>
+                    <Button x:Name="buttonDelOne" 
+                            Click="buttonDelOne_Click" 
+                            Height="20" 
+                            Width="105" 
+                            Grid.Row="1" 
+                            Grid.Column="1">
+                        Delete single task
+                    </Button>
+                    <Button x:Name="buttonDelAll" 
+                            Click="buttonDelAll_Click" 
+                            Height="20" 
+                            Width="105" 
+                            Grid.Row="2" 
+                            Grid.Column="1">
+                        Delete all tasks
+                    </Button>
                 </Grid>
             </TabItem>
         </TabControl>
