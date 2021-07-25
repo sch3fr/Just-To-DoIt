@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -26,7 +27,7 @@ namespace JustToDoIt
         public MainWindow()
         {
             InitializeComponent();
-            //items.Add(new TodoItem() { Title = "First task", Completion = false });
+
             list.ItemsSource = taskList;
 
         }
@@ -36,6 +37,14 @@ namespace JustToDoIt
             public string Title { get; set; }
             public bool Completion { get; set; }
         }
+        
+        /*
+        public ObservableCollection<>
+            {
+
+            }
+        */
+
 
         private void buttonAddTask_Click(object sender, RoutedEventArgs e)
         {
@@ -51,7 +60,7 @@ namespace JustToDoIt
 
         private void buttonDelOne_Click(object sender, RoutedEventArgs e)
         {
-            list.Items.Remove(taskList);
+            //list.Items.Remove(taskList);
         }
 
         private void CheckBox_Checked(object sender, RoutedEventArgs e)
