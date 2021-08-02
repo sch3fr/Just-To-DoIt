@@ -64,7 +64,7 @@
                                               Margin="5,0,5,0"
                                               Checked="CheckBox_Checked">
                                     </CheckBox>
-                                    <TextBlock Text="{Binding Title}"/>
+                                    <TextBlock Text="{Binding allTasks}"/>
                                     
                                 </StackPanel>
                             </DataTemplate>
