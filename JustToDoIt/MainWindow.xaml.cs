@@ -61,13 +61,13 @@ namespace JustToDoIt
 
         private void buttonDelAll_Click(object sender, RoutedEventArgs e)
         {
-            
-            
+            allTasks.Clear();
         }
 
         private void buttonDelOne_Click(object sender, RoutedEventArgs e)
         {
             //list.Items.Remove(taskList);
+            allTasks.Remove((string)list.SelectedItem);
         }
 
         private void CheckBox_Checked(object sender, RoutedEventArgs e)
