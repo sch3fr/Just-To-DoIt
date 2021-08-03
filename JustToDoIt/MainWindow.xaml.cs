@@ -21,13 +21,14 @@ namespace JustToDoIt
     /// On the Task List there are two buttons, one to delete selected task, the other to delete all tasks.
     /// You should be able to mark tasks as done with the checkbox next to every task.
     /// </summary>
-    
+
     //Important Names
     //TextBox = textBox
     //Add Task button = buttonAddTask
     //Task List Box = list
     //Delete Single Task button = buttonDelOne
     //Delete All Tasks button = buttonDelAll
+    //textblock in list = taskListNames
     public partial class MainWindow : Window
     {
         // List<TodoItem> taskList = new List<TodoItem>();
@@ -56,6 +57,7 @@ namespace JustToDoIt
         {
             //taskList.Add(new TodoItem() { Title = textBox.Text, Completion = false });
             allTasks.Add(textBox.Text);
+            
             MessageBox.Show("Task " + textBox.Text + " has been added to the list");
         }
 
