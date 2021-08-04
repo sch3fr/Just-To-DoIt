@@ -17,7 +17,7 @@ using System.Windows.Shapes;
 namespace JustToDoIt
 {
     /// <summary>
-    /// Basically you write task into the text box on new task page. The Add Task buddon should add it to the list on Task List page.
+    /// Basically you write task into the text box on new task page. The Add Task button adds it to the list on Task List page.
     /// On the Task List there are two buttons, one to delete selected task, the other to delete all tasks.
     /// You should be able to mark tasks as done with the checkbox next to every task.
     /// </summary>
@@ -31,31 +31,16 @@ namespace JustToDoIt
     //textblock in list = taskListNames
     public partial class MainWindow : Window
     {
-        // List<TodoItem> taskList = new List<TodoItem>();
         public ObservableCollection<string> allTasks { get; set; }
 
         public MainWindow()
         {
-
             allTasks = new ObservableCollection<string>();
             this.DataContext = this;
             InitializeComponent();
-            
-            //list.ItemsSource = taskList;
-
         }
-
-        /*
-        public class TodoItem
-        {
-            public string Title { get; set; }
-            public bool Completion { get; set; }
-        }
-        */
-
         private void buttonAddTask_Click(object sender, RoutedEventArgs e)
         {
-            //taskList.Add(new TodoItem() { Title = textBox.Text, Completion = false });
             allTasks.Add(textBox.Text);
             
             MessageBox.Show("Task " + textBox.Text + " has been added to the list");
@@ -68,13 +53,7 @@ namespace JustToDoIt
 
         private void buttonDelOne_Click(object sender, RoutedEventArgs e)
         {
-            //list.Items.Remove(taskList);
             allTasks.Remove((string)list.SelectedItem);
-        }
-
-        private void CheckBox_Checked(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }
