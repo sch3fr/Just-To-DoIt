@@ -22,6 +22,7 @@ namespace JustToDoIt
     /// Basically you write task into the text box on new task page. The Add Task button adds it to the list on Task List page.
     /// On the Task List there are two buttons, one to delete selected task, the other to delete all tasks.
     /// You should be able to mark tasks as done with the checkbox next to every task.
+    /// After pressing the close button the app generates .xml file with all tasks. The file is loded on startup.
     /// </summary>
 
     //Important Names
@@ -37,7 +38,7 @@ namespace JustToDoIt
     */
     public partial class MainWindow : Window
     {
-        public ObservableCollection<string> allTasks { get; set; }
+        public ObservableCollection<string> allTasks { get; set; } //
 
         public MainWindow()
         {
@@ -45,9 +46,17 @@ namespace JustToDoIt
             this.DataContext = this;
 
             XmlSerializer xs = new XmlSerializer(typeof(ObservableCollection<string>));
-            using (StreamReader rd = new StreamReader("AllTasksList.xml"))
+
+            try //the .xml file is not created on the first startup, so this try-catch block saves the program from crashing by creating the xaml file first.
             {
-                allTasks = xs.Deserialize(rd) as ObservableCollection<string>;
+                using (StreamReader rd = new StreamReader("AllTasksList.xml"))
+                {
+                    allTasks = xs.Deserialize(rd) as ObservableCollection<string>;
+                }
+            }
+            catch
+            {
+                File.Create("AllTasksList.xml");
             }
 
             InitializeComponent();
@@ -69,7 +78,6 @@ namespace JustToDoIt
         private void buttonAddTask_Click(object sender, RoutedEventArgs e) //adds tasks from the textBox to the taskList
         {
             allTasks.Add(textBox.Text);
-            
             MessageBox.Show("Task " + textBox.Text + " has been added to the list");
         }
 
