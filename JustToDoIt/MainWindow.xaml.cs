@@ -38,7 +38,7 @@ namespace JustToDoIt
     */
     public partial class MainWindow : Window
     {
-        public ObservableCollection<string> allTasks { get; set; } //
+        public ObservableCollection<string> allTasks { get; set; } //makes a new observable collection
 
         public MainWindow()
         {
