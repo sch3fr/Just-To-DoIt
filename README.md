@@ -1,9 +1,9 @@
-# Just-To-DoIt
-A simple Windows To Do app to become familiar with XAML. Nothing revolutionary here.
-You just simply enter a task you want to do like this:<br/>
-![Screenshot](screenshot1.png)<br/>
-Then you can view all your tasks on a list.<br/>
-![Screenshot](screenshot2.png)<br/>
+# Just(TO)DoIt
+A simple Windows To Do app to become familiar with XAML. Nothing revolutionary here. I just think it is a good first project with WPF, so far I've been doing only console applications.<br/>
+You just simply enter a task you want to do like this:<br/><br/>
+![Screenshot](docs/images/screenshot1.png)<br/><br/>
+Then you can view all your tasks on a list.<br/><br/>
+![Screenshot](docs/images/screenshot2.png)<br/><br/>
 There you can mark your tasks as done, delete one task, or clear whole list.
 The app now saves the task list to .xml file and loads it on the startup.
 ### To Do
