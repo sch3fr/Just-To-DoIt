@@ -48,7 +48,7 @@ namespace JustToDoIt
             XmlSerializer xs = new XmlSerializer(typeof(ObservableCollection<string>));
 
             try //the .xml file is not created on the first startup, so this try-catch block saves the program from crashing by creating the xaml file first.
-            {
+            {   //it's only creating the xml file like this,because if it created new file on every startup the old data would be erased
                 using (StreamReader rd = new StreamReader("AllTasksList.xml"))
                 {
                     allTasks = xs.Deserialize(rd) as ObservableCollection<string>;
@@ -61,7 +61,7 @@ namespace JustToDoIt
 
             InitializeComponent();
 
-            this.Closed += new EventHandler(MainWindow_Closed); // creates new event when the window is closed
+            this.Closed += new EventHandler(MainWindow_Closed); //creates new event when the window is closed
 
 
             
